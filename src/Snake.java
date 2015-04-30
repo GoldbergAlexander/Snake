@@ -23,7 +23,7 @@ public class Snake {
         arrayX = newX;
         arrayY = newY;
     }
-
+    //opposite of the enqueue.
     private static void dequeu() {
         int[] newX = new int[arrayX.length - 1];
         int[] newY = new int[arrayY.length - 1];
@@ -39,7 +39,7 @@ public class Snake {
 
 
     }
-
+    //handles the moving, as well as any collisions that may occur.
     public static void move(int x, int y) {
         if (x >= 20 || x < 0 || y >= 20 || y < 0) {
             System.out.println("Collision");

@@ -1,5 +1,5 @@
 /**
- * Created by Alexander Goldberg (alexander.goldberg25@uga.edu) on 4/18/15.
+ * Created by Alexander Goldberg (alexander.goldberg25@uga.edu), and Michael Kovalsky on 4/29/15.
  * This File handles interactions with the the View
  */
 
@@ -56,7 +56,7 @@ public class Controller implements Initializable {
                 break;
         }
     }
-
+    //starts the timer.
     @Override
     public void initialize(java.net.URL args0, ResourceBundle args1) {
         DrawGame.drawGrid(gameCanvas);
@@ -66,16 +66,16 @@ public class Controller implements Initializable {
         animationTimer.setCycleCount(Animation.INDEFINITE);
 
     }
-
+    //draws the elements to the canvas based on the timer.
     private void timerWork() {
         DrawGame.clear(gameCanvas);
         DrawGame.drawGrid(gameCanvas);
         snakeMoveHandler();
         DrawGame.drawSnake(gameCanvas);
-        DrawGame.drawFood(gameCanvas, Snake.snakeFood().foodPos()[0], Snake.snakeFood().foodPos()[1]);
+        DrawGame.drawCircleFood(gameCanvas, Snake.snakeFood().foodPos()[0], Snake.snakeFood().foodPos()[1]);
         scoreLabel.setText(String.valueOf(Snake.length() - 5));
     }
-
+    //handles the movement of the snake.
     private void snakeMoveHandler() {
         switch (direction) {
             case EAST:
