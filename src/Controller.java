@@ -92,8 +92,4 @@ public class Controller implements Initializable {
                 break;
         }
     }
-
-    public enum Direction {
-        NORTH, SOUTH, EAST, WEST
-    }
 }
