@@ -7,7 +7,7 @@ import javafx.stage.Stage;
 import java.io.IOException;
 
 /**
- * Created by Alexander Goldberg (alexander.goldberg25@uga.edu) on 4/18/15.
+ * Created by Alexander Goldberg (alexander.goldberg25@uga.edu), and Michael Kovalsky on 4/29/15.
  * This file serves to launch the project
  */
 public class Main extends Application {

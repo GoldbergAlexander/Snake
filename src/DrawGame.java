@@ -1,8 +1,9 @@
 /**
- * Created by Alexander Goldberg (alexander.goldberg25@uga.edu) on 4/19/15.
+ * Created by Alexander Goldberg (alexander.goldberg25@uga.edu), and Michael Kovalsky on 4/29/15.
  * file contains static drawing functions
  */
 
+import com.sun.corba.se.impl.orbutil.graph.Graph;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.paint.Color;
@@ -47,19 +48,20 @@ public class DrawGame {
 
     }
 
-    public static void drawFood(Canvas canvas, int x, int y) {
+    //draws a circular food.
+    public static void drawCircleFood(Canvas canvas, int x, int y)
+    {
         GraphicsContext gc = canvas.getGraphicsContext2D();
-        //Assuming block size of 20
-        double BLOCK_SIZE = 20;
 
-        //calc position
+        double CIRCLE_SIZE = 20;
+
         double startX = x * 20;
         double startY = y * 20;
         gc.setFill(Color.GREEN);
-        gc.fillRect(startX, startY, BLOCK_SIZE, BLOCK_SIZE);
-
+        gc.fillOval(startX, startY, CIRCLE_SIZE, CIRCLE_SIZE);
     }
 
+    //draws the snake.
     public static void drawSnake(Canvas canvas) {
         for (int i = 0; i < Snake.snakeX().length; i++) {
             fillSquare(canvas, Snake.snakeX()[i], Snake.snakeY()[i]);

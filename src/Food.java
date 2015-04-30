@@ -4,7 +4,7 @@
 public class Food {
     boolean snakeAtPos;
     private int x, y;
-
+    //creates a random position for the food.
     Food() {
         while (true) {
             x = (int) (Math.random() * 20);
